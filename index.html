@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#ffffff"><title>Sign in – CS Secure Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="signin-page">
+  <main class="signin-wrap">
+    <section class="signin-card" id="loginCard">
+      <div class="cs-wordmark" aria-label="CS Secure Login"><span class="cs-symbol">CS</span></div>
+      <h1>Sign in</h1>
+      <p class="subtitle">to continue to <strong>CS Secure Login</strong></p>
+      <form id="loginForm" class="signin-form">
+        <div class="field-wrap"><input id="username" name="username" autocomplete="username" placeholder=" " required maxlength="60"><label for="username">Username</label></div>
+        <div class="field-wrap"><input id="fullname" name="fullname" autocomplete="name" placeholder=" " required maxlength="100"><label for="fullname">Full Name</label></div>
+        <p class="helper">Enter the username and full name provided to you.</p>
+        <div class="form-actions"><button class="text-action" type="button" disabled> </button><button class="google-button" type="submit" id="continueBtn">Next</button></div>
+      </form>
+      <div id="message" class="message" role="status"></div>
+    </section>
+
+    <section class="signin-card hidden" id="adminCodeCard">
+      <div class="cs-wordmark"><span class="cs-symbol">CS</span></div>
+      <h1>Admin verification</h1>
+      <p class="subtitle">Enter the administrator code to continue to <strong>CS Secure Login</strong>.</p>
+      <form id="adminForm" class="signin-form">
+        <div class="field-wrap"><input id="adminCode" type="password" inputmode="numeric" autocomplete="one-time-code" placeholder=" " required maxlength="20"><label for="adminCode">Admin code</label></div>
+        <div class="form-actions"><button class="text-action" id="backBtn" type="button">Back</button><button class="google-button" type="submit" id="adminBtn">Next</button></div>
+      </form>
+      <div id="adminMessage" class="message" role="status"></div>
+    </section>
+
+    <section class="signin-card hidden result-card" id="resultCard">
+      <div class="cs-wordmark"><span class="cs-symbol">CS</span></div><div class="result-icon">✓</div>
+      <h1>Request recorded</h1><p class="subtitle">Your login details have been recorded.</p>
+      <a class="google-button button-link" href="index.html">Back to sign in</a>
+    </section>
+    <section class="signin-card hidden result-card" id="failedCard">
+      <div class="cs-wordmark"><span class="cs-symbol">CS</span></div><div class="result-icon error">!</div>
+      <h1>Verification failed</h1><p class="subtitle" id="failedMessage">Please try again.</p>
+      <button class="google-button" id="retryBtn" type="button">Try again</button>
+    </section>
+    <footer class="signin-footer"><span>English (United States)</span><span>Help&nbsp;&nbsp;&nbsp; Privacy&nbsp;&nbsp;&nbsp; Terms</span></footer>
+    <p class="copyright">© <span id="year"></span> CS Secure Login</p>
+  </main>
+  <script src="config.js"></script><script src="app.js"></script>
+</body></html>
