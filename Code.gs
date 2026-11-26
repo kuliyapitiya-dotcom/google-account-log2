@@ -31,7 +31,7 @@ function doPost(e) {
 
 function response_(data) {
   const json = JSON.stringify(data).replace(/</g, '\\u003c');
-  return HtmlService.createHtmlOutput('<!doctype html><html><body><script>parent.postMessage(' + json + ', "*");</script></body></html>');
+  return HtmlService.createHtmlOutput('<!doctype html><html><body><script>parent.window.top.postMessage(' + json + ', "*");</script></body></html>');
 }
 
 function getSheet_() {
